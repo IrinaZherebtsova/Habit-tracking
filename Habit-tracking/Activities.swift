@@ -24,6 +24,6 @@ class Activities {
                 return
             }
         }
-     //   activities = []
+        activities = []
     }
 }
