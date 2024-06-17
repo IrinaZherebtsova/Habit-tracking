@@ -41,6 +41,8 @@ struct ActivityView: View {
             
             
         }
+        .frame(maxWidth: .infinity)
+        .background(.yellow.opacity(0.4))
         .navigationTitle(activity.name)
         
     }

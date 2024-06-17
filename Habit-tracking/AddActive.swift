@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddActive: View {
     @Environment(\.dismiss) var dismiss
+    
     @State private var name = ""
     @State private var description = ""
     
@@ -22,20 +23,13 @@ struct AddActive: View {
             }
             .navigationTitle("Add new activity")
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
-                        let trimmedName = name.trimmingCharacters(in: .whitespaces)
-                        guard trimmedName.isEmpty == false else { return }
-
-                        let item = Activity(name: name, description: description)
-                        activities.activities.append(item)
-                        dismiss()
-                    }
-                }
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", role: .cancel) {
-                        dismiss()
-                    }
+                Button("Save") {
+                    let trimmedName = name.trimmingCharacters(in: .whitespaces)
+                    guard trimmedName.isEmpty == false else { return }
+                    
+                    let item = Activity(name: name, description: description)
+                    activities.activities.append(item)
+                    dismiss()
                 }
             }
         }

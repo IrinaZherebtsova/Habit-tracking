@@ -61,10 +61,10 @@
 			children = (
 				3BECAB022C1E60BF00D66105 /* Habit_trackingApp.swift */,
 				3BECAB042C1E60BF00D66105 /* ContentView.swift */,
+				3BECAB102C1E650C00D66105 /* AddActive.swift */,
 				3BE8A8A72C1F958400437CED /* ActivityView.swift */,
 				3BECAB122C1E6B3D00D66105 /* Activity.swift */,
 				3BECAB142C1E6C4900D66105 /* Activities.swift */,
-				3BECAB102C1E650C00D66105 /* AddActive.swift */,
 				3BECAB062C1E60C000D66105 /* Assets.xcassets */,
 				3BECAB082C1E60C000D66105 /* Preview Content */,
 			);

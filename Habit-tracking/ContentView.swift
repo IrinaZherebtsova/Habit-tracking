@@ -23,28 +23,39 @@ struct ContentView: View {
                         Spacer()
                         
                         Text("\(activity.completionCount)")
-                            .font(.caption.weight(.black))
-                            .padding(5)
-                            .frame(minWidth: 50)
-                            .background(.green)
+                            .font(.caption.bold())
+                            .padding(7)
+                            .frame(minWidth: 60)
+                            .background(color(for: activity))
                             .foregroundStyle(.white)
                             .clipShape(.capsule)
-                        
-                        
-                       
                     }
                 }
             }
+            .background(.blue)
             .navigationTitle("Habit-tracking")
             .toolbar {
                 Button("Add active", systemImage: "plus") {
-                    
-                    showingAddActive = true
+                    showingAddActive.toggle()
                 }
             }
             .sheet(isPresented: $showingAddActive) {
                 AddActive(activities: activities)
             }
+        }
+    }
+        
+    func color(for activity: Activity) -> Color {
+        if activity.completionCount < 3 {
+            .red
+        } else if activity.completionCount < 10 {
+            .orange
+        } else if activity.completionCount < 20 {
+            .green
+        } else if activity.completionCount < 50 {
+            .blue
+        } else {
+            .indigo
         }
     }
 }
